@@ -4,7 +4,7 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function ($routeProvider) {
 	$routeProvider
 	.when('/',{
-		templateUrl: 'partials/view1.html'
+		templateUrl: 'partials/view1dashboard.html'
 	})
 	.when('/products',{
 		templateUrl: 'partials/view1products.html'

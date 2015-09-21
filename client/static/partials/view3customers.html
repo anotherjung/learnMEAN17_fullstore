@@ -27,20 +27,17 @@
 	  	</div>
 
 
-
-
-<div ng-repeat="customer in customers | orderBy:'-created'">
-	 <div class="card">
-	 	<div class="card-content grey darken-1">
-	 	<span class="white-text">
-	 		<p> <input class="btn red right" type="submit" value="Delete" ng-click="delete(customer)"></p>
- 
-<h3>customer name: {{customer.name}}</h3>
-<p>created date: {{customer.created | date:'MMMM d, yyyy - h:mm a'}}</p>
-</span>
-<div>
-</div>
-</div>
+	  	<div ng-repeat="customer in customers | orderBy:'-created'">
+	  		<div class="card">
+	  			<div class="card-content grey darken-1">
+	  				<span class="white-text">
+	  					<p> <input class="btn red right" type="submit" value="Delete" ng-click="delete(customer)"></p>
+	  					<h3>customer name: {{customer.name}}</h3>
+	  					<p>created date: {{customer.created | date:'MMMM d, yyyy - h:mm a'}}</p>
+	  				</span>
+	  			</div>
+	  		</div>
+	  	</div>
 
 
 </div>

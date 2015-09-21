@@ -1,0 +1,33 @@
+<div class="col m6 l3"> 
+		    <h4 class="center">Add a new product</h4>
+		    <h5 class="error hide red-text">Name already exist. Please enter new name</h5>
+		  	<form class='form'>
+
+		  		<div class="col s12 m6 l3">    
+		  			<label for="name1">Name:</label> 
+		  			<!--2b ng-model -->
+		  			<input id="name1" class='form-control' type='text' name='name' ng-model='newProduct.name' required>
+		  		</div>
+
+		  		<div class="col s12 m6 l3">    
+		  			<label for="image1">Image (url):</label> 
+		  			<!--2b ng-model -->
+		  			<input id="image1" class='form-control' type='text' name='imageurl' ng-model='newProduct.imageurl'>
+		  		</div>
+
+		  		<div class="col s12 m6 l3">    
+		  			<label for="qty1">Initial Quantity:</label> 
+		  			<!--2b ng-model -->
+
+		  			<input id="qty1" class='form-control' type='text' name='qty' ng-model='newProduct.qty'>
+		  			
+		  		</div>
+   
+		  		<div class="col s12 m6 l3"> 
+		  			<!--2c ng-click -->
+		  			<input class= "btn blue" type="create" value="Submit" ng-click='addProduct()'>
+		  		</div>
+
+		  	</form>
+</div>   
+	

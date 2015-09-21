@@ -1,0 +1,76 @@
+<!--1b add ng-controller directive to div container -->
+<div class="container" ng-controller='productController'>
+{{products}}
+
+	  	<div class="row">
+	  		<div class="col s3">
+	  		<h4 class="center">Add a new product</h4>
+		    <h5 class="error hide red-text">Name already exist. Please enter new name</h5>
+		  	<form class='form'>
+
+		  		<div class="col">    
+		  			<label for="name1">Name:</label> 
+		  			<!--2b ng-model -->
+		  			<input id="name1" class='form-control' type='text' name='name' ng-model='newProduct.name' required>
+		  		</div>
+
+		  		<div class="col">    
+		  			<label for="image1">Image (url):</label> 
+		  			<!--2b ng-model -->
+		  			<input id="image1" class='form-control' type='text' name='imageurl' ng-model='newProduct.imageurl'>
+		  		</div>
+
+		  		<div class="col">    
+		  			<label for="qty1">Initial Quantity:</label> 
+		  			<!--2b ng-model -->
+
+		  			<input id="qty1" class='form-control' type='text' name='qty' ng-model='newProduct.qty'>
+		  			
+
+		  		</div>
+   
+		  		<div class="col"> 
+		  			<!--2c ng-click -->
+		  			<input class= "btn blue" type="create" value="Submit" ng-click='addProduct()'>
+		  		</div>
+
+		  	</form>
+	  		</div>
+
+
+
+
+
+	  	 <div class="col s8"> 
+	  	 	<!--4 filter_name -->
+	  	 	<label for="search1">Search:</label>
+	  	 	<input id="search1" type="text" ng-model="filter_name">
+		<!-- 
+		<table>
+			<tr ng-repeat="product in products">
+				<td><span ng-bind="product.name"></span></td>
+				<td><span ng-bind="product.name"></span></td>
+			</tr>
+		</table>	 -->
+
+	  	<div ng-repeat="product in products | filter:filter_name | orderBy:'-created'" class="col m6">
+	  		<div class="card ">
+	  			<div class="card-content grey darken-1">
+	  				<span class="white-text">
+	  					<p><input class="btn red right" type="submit" value="Delete" ng-click="delete(product)"></p>	  					<img src="{{product.imageurl}}">
+	  					<h4>name: {{product.name}}</h4>
+	  					<h4>qty: {{product.qty}}</h4>
+	  					
+	  					<!-- <p>date: {{product.created | date:'MMMM d, yyyy - h:mm a'}}</p>
+ -->
+	  				</span>
+	  			</div>
+	  		</div>
+	  	</div>
+
+		</div>
+		</div>
+
+	    
+
+</div>

@@ -1,14 +1,15 @@
 //MVC1a for routes
 var mongoose = require('mongoose');
 var customer = mongoose.model('Customer');
-// var Answer = mongoose.model('Answer');
+var products = mongoose.model('Product');
 
 //MVC2h moved to model
 
 // //MVC2c for controller
 var customers = require('../controllers/customers.js');
+var products = require('../controllers/products.js');
+
 // var users = require('../controllers/users.js');
-// var answers = require('../controllers/answers.js');
 
 
 //start MVC1d export
@@ -25,6 +26,41 @@ module.exports = function(app) {
 		res.render("index");
 		console.log('home page loaded');
 	})
+
+
+	//route to display data from db
+	app.get('/getproducts', function (req, res) {
+		//test http://localhost:8080/getproducts
+		//hard-coded json data
+		//res.json([{name: "batman", number:11}, {name: "superman", number:22}])
+
+		//MVC ask controller for data
+		products.getproducts(req,res)
+
+		//MVC-test
+		// Quote.find({}, function (err, quotes) {
+		// 	res.render('main', {quotes:quotes});
+		// });
+	})
+
+	//route to add data to db
+	app.post('/addproduct', function (req, res) {
+		console.log('rou addproduct', req.body)
+		products.addproduct(req,res)
+	})
+
+	//route to add data to db
+	app.post('/addproduct', function (req, res) {
+		console.log('rou addproduct', req.body)
+		products.deleteproduct(req,res)
+	})
+
+	//route to add data to db
+	app.post('/deleteproduct', function (req, res) {
+		console.log('rou deleteproduct', req.body)
+		products.deleteproduct(req,res)
+	})
+
 
 	//route to add data to db
 	app.post('/addcustomer', function (req, res) {
