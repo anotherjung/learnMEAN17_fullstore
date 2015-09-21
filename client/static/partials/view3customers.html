@@ -1,0 +1,29 @@
+<!--1b add ng-controller directive to div container -->
+<div class="container" ng-controller='customerController'>
+<!-- testing -->
+{{customers}}
+		<div class="row">
+	    <div class="col s12"> 
+		    <h4 class="center">Add a new customer</h4>
+		    <h5 class="error hide red-text">Customer already exist. Please try again. Thank You.</h5>
+		    <h5 class="success hide green-text">Awesome, Customer has be submitted. </h5>
+
+		  	<form class='form'>
+
+		  		<div class="col s12 m6 l3">    
+		  			<label for="name1">Customer:</label> 
+		  			<!--2b ng-model -->
+		  			<input id="name1" class='form-control' type='text' name='name' ng-model='newCustomer.name'>
+		  		</div>
+   
+		  		<div class="col s12 m6 l3"> 
+		  			<!--2c ng-click -->
+		  			<input class= "btn blue" type="submit" value="Submit" ng-click='addCustomer()'>
+		  		</div>
+
+		  	</form>
+	  	</div>   
+	  	</div>
+
+
+</div>
