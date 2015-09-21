@@ -32,6 +32,13 @@ module.exports = function(app) {
 		customers.addcustomer(req,res)
 	})
 
+
+	//route to add data to db
+	app.post('/deletecustomer', function (req, res) {
+		console.log('rou deletecustomer', req.body)
+		customers.deletecustomer(req,res)
+	})
+
 	//route to display data from db
 	app.get('/getcustomers', function (req, res) {
 		//hard-coded json data

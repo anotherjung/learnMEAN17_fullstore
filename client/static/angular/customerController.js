@@ -20,22 +20,27 @@ myApp.controller('customerController', function ($route, $scope, $location, cust
 					$('.success').removeClass('hide');
 					//helps validations
 					$route.reload();
-
-				} else {
+				} 
+				else {
 					$('.error').removeClass('hide');
-
 				}
+
 				//clear form values by giving it an empty object
 				$scope.newCustomer = {};
-
-
 	}
+
+	$scope.delete = function(customer) {
+		console.log('$scope.delete', customer);
+		customerFactory.delete(customer);
+	}
+
 
 	//5c ng-click delete
-	$scope.removeCustomer = function (customer) {
-		// $scope.heros.splice($index, 1);
-		//  indexOf() calculates the index of the item whose value matches what we pass it.  Look it up!
-		$scope.customers.splice($scope.customers.indexOf(customer), 1);
-	}
+	// $scope.removeCustomer = function (customer) {
+	// 	console.log('$scope.removeCustomer', customer);
+	// 	// $scope.heros.splice($index, 1);
+	// 	//  indexOf() calculates the index of the item whose value matches what we pass it.  Look it up!
+	// 	//$scope.customers.splice($scope.customers.indexOf(customer), 1);
+	// }
 
 }); //ends controller

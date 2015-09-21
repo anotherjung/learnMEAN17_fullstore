@@ -1,5 +1,5 @@
 //5b add factory to provide data to controller
-myApp.factory('customerFactory', function ($http, $location) {
+myApp.factory('customerFactory', function ($route, $http, $location) {
 	//3 factory is a function that returns an object literal
 	//7 add some data
 	var customers = [
@@ -57,6 +57,18 @@ myApp.factory('customerFactory', function ($http, $location) {
 		}
 		return false;
 	}
+
+	factory.delete = function(customer, callback) {
+		console.log('factory.delete', customer);
+		$http.post('/deletecustomer', customer).success(function (output) {
+			callback(output);
+			console.log('success', output);
+		});
+		$route.reload();
+	}
+
+
+
 
 	return factory
 }) //ends factory

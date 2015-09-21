@@ -31,6 +31,17 @@ module.exports =  {
 				console.log("else redirect");
 			}
 		})
+	},
+
+	deletecustomer: function(req, res) {
+		console.log('con deletecustomer', req.body._id);
+		customer.remove({_id: req.body._id}, function(err, output) {
+			if(err){
+				console.log('err',err); 
+			} else {
+				console.log('baby deletecustomer', req.body._id)
+			}
+		});
 	}
 
 

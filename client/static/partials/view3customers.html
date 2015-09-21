@@ -6,6 +6,7 @@
 	    <div class="col s12"> 
 		    <h4 class="center">Add a new customer</h4>
 		    <h5 class="error hide red-text">Customer already exist. Please try again. Thank You.</h5>
+		    <h5 class="error1 hide red-text">Please enter any value.</h5>
 		    <h5 class="success hide green-text">Awesome, Customer has be submitted. </h5>
 
 		  	<form class='form'>
@@ -13,7 +14,7 @@
 		  		<div class="col s12 m6 l3">    
 		  			<label for="name1">Customer:</label> 
 		  			<!--2b ng-model -->
-		  			<input id="name1" class='form-control' type='text' name='name' ng-model='newCustomer.name'>
+		  			<input id="name1" class='form-control' type='text' name='name' ng-model='newCustomer.name' required>
 		  		</div>
    
 		  		<div class="col s12 m6 l3"> 
@@ -24,6 +25,22 @@
 		  	</form>
 	  	</div>   
 	  	</div>
+
+
+
+
+<div ng-repeat="customer in customers | orderBy:'-created'">
+	 <div class="card">
+	 	<div class="card-content grey darken-1">
+	 	<span class="white-text">
+	 		<p> <input class="btn red right" type="submit" value="Delete" ng-click="delete(customer)"></p>
+ 
+<h3>customer name: {{customer.name}}</h3>
+<p>created date: {{customer.created | date:'MMMM d, yyyy - h:mm a'}}</p>
+</span>
+<div>
+</div>
+</div>
 
 
 </div>
