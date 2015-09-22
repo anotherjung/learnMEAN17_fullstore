@@ -43,7 +43,8 @@ myApp.factory('customerFactory', function ($route, $http, $location) {
 			console.log('baby added customer', info);
 			//reload the page to fresh the data
 			// $location.path('showCustomers');
-		})
+		});
+		$route.reload();
 	}	
 
 	//6 check array to see if customer name exists

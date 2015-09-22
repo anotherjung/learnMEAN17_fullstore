@@ -2,12 +2,15 @@
 var mongoose = require('mongoose');
 var customer = mongoose.model('Customer');
 var products = mongoose.model('Product');
+var orders = mongoose.model('Order');
+
 
 //MVC2h moved to model
 
 // //MVC2c for controller
 var customers = require('../controllers/customers.js');
 var products = require('../controllers/products.js');
+var orders = require('../controllers/orders.js');
 
 // var users = require('../controllers/users.js');
 
@@ -26,6 +29,38 @@ module.exports = function(app) {
 		res.render("index");
 		console.log('home page loaded');
 	})
+
+
+	//route to display data from db
+	app.get('/getorders', function (req, res) {
+		//test http://localhost:8080/getproducts
+		//hard-coded json data
+		//res.json([{name: "batman", number:11}, {name: "superman", number:22}])
+
+		//MVC ask controller for data
+		orders.getorders(req,res)
+
+		//MVC-test
+		// Quote.find({}, function (err, quotes) {
+		// 	res.render('main', {quotes:quotes});
+		// });
+	})
+
+	//route to add data to db
+	app.post('/addorder', function (req, res) {
+		console.log('rou addo', req.body)
+		orders.addorder(req,res)
+	})
+
+	//route to add data to db
+	app.post('/deleteorder', function (req, res) {
+		console.log('rou deleteo', req.body)
+		orders.deleteproduct(req,res)
+	})
+
+
+
+
 
 
 	//route to display data from db
@@ -50,16 +85,14 @@ module.exports = function(app) {
 	})
 
 	//route to add data to db
-	app.post('/addproduct', function (req, res) {
-		console.log('rou addproduct', req.body)
-		products.deleteproduct(req,res)
-	})
-
-	//route to add data to db
 	app.post('/deleteproduct', function (req, res) {
 		console.log('rou deleteproduct', req.body)
 		products.deleteproduct(req,res)
 	})
+
+
+
+
 
 
 	//route to add data to db
