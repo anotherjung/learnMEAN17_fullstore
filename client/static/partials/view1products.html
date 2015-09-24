@@ -54,16 +54,20 @@
 		</table>	 -->
 
 	  	<div ng-repeat="product in products | filter:filter_name | orderBy:'-created'" class="col m6">
-	  		<div class="card ">
-	  			<div class="card-content grey darken-1">
-	  				<span class="white-text">
-	  					<p><input class="btn red right" type="submit" value="Delete" ng-click="delete(product)"></p>	  					<img src="{{product.imageurl}}">
-	  					<h4>name: {{product.name}}</h4>
-	  					<h4>qty: {{product.qty}}</h4>
+	  		<div class="card small">
+	  			<div class="card-image"><img src="{{product.imageurl}}">
+	  			<span class="card-title"><input class="btn-floating waves-effect waves-light red" type="submit" value="X" ng-click="delete(product)"></span>
+	  			</div>
+
+	  			<div class="card-content grey darken-1 white-text center-align">
+	  				
+	  				 					
+	  					<h5>{{product.name}}</h5>
+	  					<h5>qty: {{product.qty}}</h5>
 	  					
 	  					<!-- <p>date: {{product.created | date:'MMMM d, yyyy - h:mm a'}}</p>
  -->
-	  				</span>
+	  		
 	  			</div>
 	  		</div>
 	  	</div>
