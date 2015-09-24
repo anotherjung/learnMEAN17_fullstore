@@ -55,7 +55,7 @@ module.exports = function(app) {
 	//route to add data to db
 	app.post('/deleteorder', function (req, res) {
 		console.log('rou deleteo', req.body)
-		orders.deleteproduct(req,res)
+		orders.deleteorder(req,res)
 	})
 
 

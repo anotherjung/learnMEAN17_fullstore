@@ -31,5 +31,12 @@ myApp.controller('orderController', function ($scope, $routeParams, orderFactory
 			 $scope.newOrder = {};
 	}
 
+	//2a ng-click delete
+	$scope.delete = function(order) {
+		console.log('$scope.delete', order);
+		orderFactory.delete(order);
+	}
+
+
 
 }); //ends controller

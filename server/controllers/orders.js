@@ -14,10 +14,10 @@ module.exports =  {
 		.populate('_customer')
 		.exec(function(err, results) {
 			if(err) {
-	         console.log('err con show', err);
+	         //console.log('err con show', err);
 	       } else {
 	         res.json(results);
-	         console.log('con show', results)
+	         //console.log('con show', results)
 	       }
 
 		})
