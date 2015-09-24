@@ -1,0 +1,54 @@
+<!-- 1b add ng-controller directive to div container -->
+<div class="container" ng-controller='dashboardController'>
+  <!-- testing -->
+
+  <div class="row">
+    <h5 class="center-align">Most Available Products</h5>
+<!-- <div class="col s12 l2"> 
+  <label for="search1">Search Products:</label>
+    <input id="search1" type="text" ng-model="filter_name">
+  </div> -->
+  <div ng-repeat="product in products | filter:filter_name | orderBy:'-qty' | limitTo: 4" class="col s12 m6 l3">
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <img class="circle responsive-img" src="{{product.imageurl}}">
+      <p class="center-align">{{product.name}}
+        - qty: {{product.qty}}</p>
+      </div>
+    </div> 
+    <a class="right"href="#/products">more products</a>
+  </div> <!--ends row -->
+
+  <div class="row">
+    <h5 class="center-align">Recent Orders</h5>
+<!-- <div class="col s12 l2"> 
+  <label for="search1">Search Products:</label>
+    <input id="search1" type="text" ng-model="filter_name">
+  </div> -->
+  <div ng-repeat="order in orders | orderBy:'-created' | limitTo: 4" class="col s12 m6 l3">
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <p class="center-align">{{order._customer.name}}<br>
+        {{order.created | date:'MM-d-yy, h:mm a'}}</p>
+      </div>
+    </div> 
+    <a class="right"href="#/orders">more orders</a>
+  </div> <!--ends row -->
+
+
+    <div class="row">
+    <h5 class="center-align">Recent Customers</h5>
+<!-- <div class="col s12 l2"> 
+  <label for="search1">Search Products:</label>
+    <input id="search1" type="text" ng-model="filter_name">
+  </div> -->
+  <div ng-repeat="customer in customers | orderBy:'-created' | limitTo: 4" class="col s12 m6 l3">
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <p class="center-align">{{customer.name}}<br>
+        {{customer.created | date:'MM-d-yy, h:mm a'}}</p>
+      </div>
+    </div> 
+    <a class="right"href="#/customers">more customers</a>
+  </div> <!--ends row -->
+
+
+
+</div> <!-- ends container 
