@@ -37,7 +37,7 @@ myApp.factory('productFactory', function ($http, $route) {
 			console.log('baby factory.addProduct', info);
 			//reload the page to fresh the data
 			// $location.path('showQuestions');
-		})
+		});
 		$route.reload();
 	}	
 

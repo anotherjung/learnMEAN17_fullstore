@@ -8,15 +8,19 @@ module.exports =  {
 		//test hard-code data
 		//res.json([{name: "batman", number:11}, {name: "superman", number:22}])
 
+		//5a associate customer info in orders using populate
 		//MVC model
-		order.find({}, function(err, results) {
-	       if(err) {
+		order.find({})
+		.populate('_customer')
+		.exec(function(err, results) {
+			if(err) {
 	         console.log('err con show', err);
 	       } else {
 	         res.json(results);
 	         console.log('con show', results)
 	       }
-		 })
+
+		})
 	},
 
 	addorder: function(req, res) {
