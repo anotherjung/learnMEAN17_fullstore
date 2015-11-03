@@ -21,7 +21,7 @@ module.exports =  {
 
 	addproduct: function(req, res) {
 		console.log('con addproduct', req.body);
-		var cc = new product({name:req.body.name, imageurl: req.body.imageurl, qty: req.body.qty, created:Date.now()});
+		var cc = new product({name:req.body.name, imageurl: req.body.imageurl, qty: req.body.qty, price: req.body.price, created:Date.now()});
 		cc.save(function(err) {
 			// console.log('11');
 			if(err) {
