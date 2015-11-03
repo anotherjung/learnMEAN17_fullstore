@@ -22,6 +22,11 @@ products
 
 			       	<select class="browser-default" ng-model='newOrder.product'>
 		    		<option value="" disabled selected>Select Product</option>
+			       	<option ng-repeat="product in products">{{product.name}}</option>​
+			       	</select>
+
+			       	<select class="browser-default" ng-model='newOrder.product'>
+		    		<option value="" disabled selected>Select Product</option>
 			       		<option ng-repeat="product in products">{{product.name}}</option>​
 			       	</select>
 

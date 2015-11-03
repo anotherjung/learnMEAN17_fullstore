@@ -16,6 +16,12 @@
 		  			<!--2b ng-model -->
 		  			<input id="name1" class='form-control' type='text' name='name' ng-model='newCustomer.name' required>
 		  		</div>
+
+		  		<div class="col s12 m9 l10">    
+		  			<label for="seat1">Seat:</label> 
+		  			<!--2b ng-model -->
+		  			<input id="seat1" class='form-control' type='text' name='seat' ng-model='newCustomer.seat' placeholder='default is takeout' required>
+		  		</div>
    
 		  		<div class="col s12 m3 l2"> 
 		  			<!--2c ng-click -->
@@ -36,6 +42,7 @@
 	  				<span class="white-text">
 	  					<p> <input class="btn red right" type="submit" value="Delete" ng-click="delete(customer)"></p>
 	  					<h3>customer name: {{customer.name}}</h3>
+	  					<p>seat: {{customer.seat}} </p>
 	  					<p>created date: {{customer.created | date:'MMMM d, yyyy - h:mm a'}}</p>
 	  				</span>
 	  			</div>
