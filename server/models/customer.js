@@ -5,7 +5,8 @@ var Schema = mongoose.Schema;
 
 //start model 
 var CustomerSchema = new mongoose.Schema({
-	name: String,
+	name: String, 
+	seat: {type: String, default: 'takeout'},
 	created: {type: Date, default: new Date},
 	//tip this is an array, then go orders, order has 1 customer
 	orders: [{type: Schema.Types.ObjectId, ref: 'Order'}]

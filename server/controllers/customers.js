@@ -21,14 +21,14 @@ module.exports =  {
 
 	addcustomer: function(req, res) {
 		console.log('con addcustomer', req.body);
-		var cc = new customer({name:req.body.name, created:Date.now()});
+		var cc = new customer({name:req.body.name, seat:req.body.seat, created:Date.now()});
 		cc.save(function(err) {
 			// console.log('11');
 			if(err) {
 				console.log("err con create", err);
 			} else {
-				res.redirect('/');
-				console.log("else redirect");
+				//res.redirect('/');
+				console.log("baby order added", req.body);
 			}
 		})
 	},
