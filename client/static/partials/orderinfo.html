@@ -1,0 +1,23 @@
+<div ng-controller='orderController'>
+
+Hi.
+<form>
+	Customer: {{order._customer.name}}
+	<table>
+	<!-- 	<col width='200'>
+		<col width='200'> -->
+
+	<tr>
+		<th>Product: </th>
+		<td>{{order.product.name}}</td>
+	</tr>
+	<tr>
+		<th>Quantity: </th>
+		<td><input type='number' ng-model='order.qty'></td>
+	</tr>
+	</table>
+	<a ng-href='#view2orders' ng-click='editOrder(order)'>
+	<button>Update</button></a>
+	
+</form>
+</div>

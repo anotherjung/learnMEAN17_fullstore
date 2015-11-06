@@ -22,7 +22,7 @@ products
 
 			       	<select class="browser-default" ng-model='newOrder.product'>
 		    		<option value="" disabled selected>Select Product</option>
-			       		<option ng-repeat="product in products">{{product.name}}</option>​
+			       		<option ng-repeat="product in products" value={{product._id}}>{{product.name}}</option>​
 			       	</select>
 
 			       	<select class="browser-default" ng-model='newOrder.qty'>
@@ -32,6 +32,7 @@ products
 
 			       	<input class= "btn green" type="submit" value="Submit" ng-click='addOrder()'>
 		   		</div>
+
 	
 		</div>
 		</div>
@@ -56,10 +57,18 @@ search and display orders
 	  		<div class="card ">
 	  			<div class="card-content grey darken-1">
 	  				<span class="white-text">
-	  					<p><input class="btn red right" type="submit" value="Delete" ng-click="delete(order)"></p>	
+	  					<p>
+	  						<a href='#orderinfo/{{order._id}}'>	
+	  							<button class='b_info'>Order Info</button>
+	  						</a>
+
+	  						<button ng-click='delete(order)'>Delete</button>
+	  						<br>
+	  						<input class="btn red right" type="submit" value="Delete" ng-click="delete(order)">
+	  					</p>	
 	  					<!--5b associate customer info in orders -->	
 	  					<h4>customer: {{order._customer.name}}</h4>
-	  					<h4>product: {{order.product}}</h4>
+	  					<h4>product: {{order.product.name}}</h4>
 	  					<h4>qty: {{order.qty}}</h4>
 	  					<h4>created: {{order.created}}</h4>
 	  					

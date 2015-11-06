@@ -52,6 +52,15 @@ module.exports = function(app) {
 		orders.addorder(req,res)
 	})
 
+	app.post('/orderEdit', function (req, res) {
+		console.log('rou addo', req.body)
+		orders.orderEdit(req,res)
+	})
+
+	app.get('/order/:order_id', function(req,res){
+		orders.orderInfo(req,res)
+	})
+
 	//route to add data to db
 	app.post('/deleteorder', function (req, res) {
 		console.log('rou deleteo', req.body)

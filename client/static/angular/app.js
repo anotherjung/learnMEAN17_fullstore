@@ -15,6 +15,9 @@ myApp.config(function ($routeProvider) {
 	.when('/customers',{
 		templateUrl: 'partials/view3customers.html'
 	})	
+	.when('/orderinfo/:id',{
+		templateUrl: 'partials/orderinfo.html'
+	})
 	.when('/settings',{
 		templateUrl: 'partials/view4settings.html'
 	// })

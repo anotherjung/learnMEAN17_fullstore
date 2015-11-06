@@ -24,6 +24,14 @@ myApp.factory('orderFactory', function ($route, $http, $location) {
 		})
 	}
 
+	factory.infoOrder = function(order, callback){
+		console.log(order);
+		$http.get('/order/'+order).success(function(order){
+			console.log(order);
+			callback(order);
+		})
+	}
+
 	factory.addOrder = function(info) {
 		console.log('fac addQuestion', info);
 		//test local
@@ -38,7 +46,13 @@ myApp.factory('orderFactory', function ($route, $http, $location) {
 			// $location.path('showQuestions');
 		})
 		$route.reload();
-	}	
+	}
+
+	factory.editOrder = function(order, callback) {
+		$http.post('/orderEdit', order).success(function (output){
+			callback(output);
+		});
+	}
 
 	factory.delete = function(order, callback) {
 		$http.post('/deleteorder', order).success(function (output){
