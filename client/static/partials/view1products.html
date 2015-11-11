@@ -21,14 +21,12 @@
 		  	
 
 		  
-		  			<!-- <label for="qty1">Initial Quantity:</label> 
-		  			2b ng-model
-		  			<input id="qty1" class='form-control' type='text' name='qty' ng-model='newProduct.qty'>
-		  			-->
-
-		  			<label for="price1">Initial Price:</label> 
+		  			<label for="qty1">Initial Quantity:</label> 
 		  			<!--2b ng-model -->
-		  			<input id="price1" class='form-control' type='text' name='qty' ng-model='newProduct.price'>
+
+		  			<input id="qty1" class='form-control' type='text' name='qty' ng-model='newProduct.qty'>
+		  			
+
 		  	
 		  			<!--2c ng-click -->
 		  			<input class= "waves-effect waves-light btn blue" type="create" value="Submit" ng-click='addProduct()'>
@@ -64,8 +62,7 @@
 	  				
 	  				 					
 	  					<h5>{{product.name}}</h5>
-	  					<h5>price: ${{product.price}}</h5>
-	  					<!-- <h5>qty: {{product.qty}}</h5> -->
+	  					<h5>qty: {{product.qty}}</h5>
 	  					
 	  					<!-- <p>date: {{product.created | date:'MMMM d, yyyy - h:mm a'}}</p>
  -->

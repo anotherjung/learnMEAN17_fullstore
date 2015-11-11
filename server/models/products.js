@@ -7,7 +7,6 @@ var Schema = mongoose.Schema;
 var ProductSchema = new mongoose.Schema({
 	name: String,
 	imageurl: { type: String, default: 'http://app.resrc.it/s=w1280,pd2/o=85/http://www.your-site.co/image.jpg'},
-	price: String,
 	qty: String,
 	created: {type: Date, default: new Date}
 });
